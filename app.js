@@ -38,9 +38,9 @@ function calculate(day, month, year, luckyNumber) {
     finalSum = (daySum + monthSum + yearSum);
 
     if (finalSum % luckyNumber == 0) {
-        resultSection.innerText = 'Yay'
+        resultSection.innerText = 'Yay! you have a lucky birthday'
     }
     else {
-        resultSection.innerText = 'Nay'
+        resultSection.innerText = 'Sorry ! Your birthday isn\'t lucky'
     }
 }
