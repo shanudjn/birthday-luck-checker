@@ -2,7 +2,8 @@ var dayInput = document.querySelector('.day');
 var monthInput = document.querySelector('.month');
 var yearInput = document.querySelector('.year');
 var luckyNumberInput = document.querySelector('.lucky-number');
-var checkButton = document.querySelector('.check-button')
+var checkButton = document.querySelector('.check-button');
+var resultSection = document.querySelector('.p__result');
 
 
 checkButton.addEventListener('click', getData);
@@ -37,9 +38,9 @@ function calculate(day, month, year, luckyNumber) {
     finalSum = (daySum + monthSum + yearSum);
 
     if (finalSum % luckyNumber == 0) {
-        console.log('Yay')
+        resultSection.innerText = 'Yay'
     }
     else {
-        console.log('nay')
+        resultSection.innerText = 'Nay'
     }
 }
