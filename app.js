@@ -3,6 +3,7 @@ var monthInput = document.querySelector('.month');
 var yearInput = document.querySelector('.year');
 var luckyNumberInput = document.querySelector('.lucky-number');
 var checkButton = document.querySelector('.check-button');
+var resultDiv = document.querySelector('.result');
 var resultSection = document.querySelector('.p__result');
 
 
@@ -38,9 +39,15 @@ function calculate(day, month, year, luckyNumber) {
     finalSum = (daySum + monthSum + yearSum);
 
     if (finalSum % luckyNumber == 0) {
-        resultSection.innerText = 'Yay! you have a lucky birthday'
+        resultDiv.style.display = "block";
+        resultSection.innerText = 'Yay! you have a lucky birthday';
+
+
     }
     else {
+        resultDiv.style.display = "block";
+        resultDiv.style.backgroundColor = '#DE0003';
+        resultDiv.style.border = "1px solid #DE0003"
         resultSection.innerText = 'Sorry ! Your birthday isn\'t lucky'
     }
 }

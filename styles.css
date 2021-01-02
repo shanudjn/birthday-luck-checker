@@ -38,10 +38,22 @@ input{
 .check-button{
     font-family:'Montserrat', sans-serif;
     margin-left: 2rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     border-radius: 4px;
     background-color: var(--primary-color);
-    font-weight: bold;
-    
+    font-weight: bold;  
 
+}
+.result{
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid var(--primary-color);;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    box-shadow: 8px 8px 6px #888888;
+    display: none;
+}
+.p__result{
+    text-align: center;
 }
