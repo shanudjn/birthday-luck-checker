@@ -40,6 +40,8 @@ function calculate(day, month, year, luckyNumber) {
 
     if (finalSum % luckyNumber == 0) {
         resultDiv.style.display = "block";
+        resultDiv.style.backgroundColor = '#A1FF63';
+        resultDiv.style.border = "1px solid #A1FF63"
         resultSection.innerText = 'Yay! you have a lucky birthday';
 
 
