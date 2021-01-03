@@ -35,6 +35,12 @@ input{
     font-family:  'Montserrat', sans-serif;
 
 }
+.error-message-div{    
+    margin-left: 32px;
+    margin-right: 32px;        
+    display: none;
+}
+
 .check-button{
     font-family:'Montserrat', sans-serif;
     margin-left: 2rem;

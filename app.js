@@ -2,6 +2,8 @@ var dayInput = document.querySelector('.day');
 var monthInput = document.querySelector('.month');
 var yearInput = document.querySelector('.year');
 var luckyNumberInput = document.querySelector('.lucky-number');
+var errorMessageDiv = document.querySelector('.error-message-div');
+var errorMessageElement = document.querySelector('.error-message');
 var checkButton = document.querySelector('.check-button');
 var resultDiv = document.querySelector('.result');
 var resultSection = document.querySelector('.p__result');
@@ -9,12 +11,61 @@ var resultSection = document.querySelector('.p__result');
 
 checkButton.addEventListener('click', getData);
 
+dayInput.addEventListener('change', (e) => {
+    if (e.target.value >= 32) {
+        console.log('Day cannot be more than 31');
+        errorMessageDiv.style.display = "block";
+        errorMessageDiv.style.backgroundColor = "#DE0003";
+        errorMessageElement.innerText = "Day cannot be more than 31"
+        // errorMessageDiv.style.border = "1px solid #A1FF63"
+
+    } else {
+        errorMessageDiv.style.display = "none";
+    }
+})
+monthInput.addEventListener('change', (e) => {
+    if (e.target.value > 12) {
+        console.log('Month cannot be more than 12');
+        errorMessageDiv.style.display = "block";
+        errorMessageDiv.style.backgroundColor = "#DE0003";
+        errorMessageElement.innerText = "Month cannot be more than 12"
+    } else {
+        errorMessageDiv.style.display = "none";
+    }
+})
+yearInput.addEventListener('change', (e) => {
+    if (e.target.value < 0) {
+        console.log('Month cannot negative number');
+        errorMessageDiv.style.display = "block";
+        errorMessageDiv.style.backgroundColor = "#DE0003";
+        errorMessageElement.innerText = "Month cannot Negative number"
+    } else {
+        errorMessageDiv.style.display = "none";
+    }
+})
+
+
+
 function getData() {
+
+    // validateInputs();
+
     var day = dayInput.value;
     var month = monthInput.value;
     var year = yearInput.value;
 
     var luckyNumber = luckyNumberInput.value;
+
+    if (day == "" || month == "" || year == "" || luckyNumber == "") {
+        console.log('Inputs cant be empty');
+        errorMessageDiv.style.display = "block";
+        errorMessageDiv.style.backgroundColor = "#DE0003";
+        errorMessageElement.innerText = "Inputs cant be empty"
+        return;
+    } else {
+        errorMessageDiv.style.display = "none";
+
+    }
 
     calculate(day, month, year, luckyNumber);
 
